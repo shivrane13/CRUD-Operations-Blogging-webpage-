@@ -1,0 +1,31 @@
+{% extends "base.html" %} {%load static%} {%block stylesheet%} <link
+rel="stylesheet" href="{%static "post.css" %}" /> {%endblock stylesheet%}
+{%block body%}
+
+<main id="all-posts">
+  <h1>All Posts</h1>
+
+  {%if blogs %}
+  <ul>
+    {% for blog in blogs %}
+    <li>
+      <article class="post-item">
+        <h2>{{ blog.title}}</h2>
+        <p class="post-item-author">By ...</p>
+        <p>{{blog.summary}}</p>
+        <div class="post-actions">
+          <form action="posts/{{blog.id}}/delete" method="POST">
+            {% csrf_token %}
+            <button class="btn btn-alt">Delete Post</button>
+          </form>
+          <a href="posts/{{blog.id}}/edit">Edit Post</a>
+          <a class="btn" href="{{blog.id}}">View Post</a>
+        </div>
+      </article>
+    </li>
+    {% endfor %}
+  </ul>
+  {%endif%}
+</main>
+
+{%endblock body%}

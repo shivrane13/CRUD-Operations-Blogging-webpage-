@@ -1,0 +1,22 @@
+{% extends "base.html" %} {% load static %}
+<div></div>
+{% block stylesheet %}<link rel="stylesheet" href="{% static "author.css" %}"/>
+<link rel="stylesheet" href="{% static "form.css" %}" /> {%endblock stylesheet%}
+<div></div>
+{%block body%}
+<section>
+  <h1>Log in as Author</h1>
+  <form action="/create-author" method="POST" id="form">
+    {%if messages %} {% for message in messages %}
+    <p style="color: red">{{message}}</p>
+    {%endfor%} {%endif%} {% csrf_token %}
+    <label for="name">Enter Your name</label>
+    <input type="text" id="name" name="aname" />
+    <label for="email">Enter Your Email</label>
+    <input type="email" id="email" name="email" />
+    <label>Enter Password</label>
+    <input type="Password" id="email" name="password" />
+    <button class="btn" id="loginbtn">Create</button>
+  </form>
+</section>
+{%endblock body%}

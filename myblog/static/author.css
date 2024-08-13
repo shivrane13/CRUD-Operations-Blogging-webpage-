@@ -1,0 +1,42 @@
+#form {
+    border: solid 1px black;
+    padding: 2rem;
+}
+
+#loginbtn {
+    margin-top: 2rem;
+    margin-left: 18rem;
+}
+
+.dis-hide {
+    text-align: center;
+    color: blue;
+    font-size: 1rem;
+}
+
+#show:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+#hide {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+#delete {
+    margin-left: 18rem;
+}
+
+#list-authors {
+    display: none;
+}
+
+table {
+    width: 100%;
+    margin-top: 30px;
+}
+
+thead {
+    font-weight: 700;
+}

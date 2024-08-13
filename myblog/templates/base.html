@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title></title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Slab:wght@400;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="{% static "base.css" %}" />
+  <div></div>
+  {%block stylesheet%}{%endblock stylesheet%}
+  <body>
+    <header id="main-header">
+      <div id="logo">
+        <a href="/">MyBlog</a>
+      </div>
+      <nav>
+        <ul>
+          <li>
+            <a href="/posts">All Posts</a>
+          </li>
+          <li>
+            <a href="/new-post">Create Post</a>
+          </li>
+          {%if isAuth%}
+          <li>
+            <a href="/logout">Logout</a>
+          </li>
+          {% else %}
+          <li>
+            <a href="/login">Login</a>
+          </li>
+          {% endif%}
+        </ul>
+      </nav>
+    </header>
+    <main>{%block body%}{%endblock body%}</main>
+  </body>
+</html>

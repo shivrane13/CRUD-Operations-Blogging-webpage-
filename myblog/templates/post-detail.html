@@ -1,0 +1,12 @@
+{% extends "base.html" %} {% load static %} {%block stylesheet%} <link
+rel="stylesheet" href="{% static "posts.css" %}" /> {%endblock stylesheet%}
+{%block body %}
+<main id="post-detail">
+  <h1>{{post.title}}</h1>
+  <section id="post-meta">{{post.date}}</section>
+  <hr />
+  <section>
+    <p id="body">{{post.body}}</p>
+  </section>
+</main>
+{%endblock body%}
