@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('includes/head', { title: details.title }) %>
+    <link rel="stylesheet" href="/styles/posts.css" />
+  </head>
+  <body>
+    <main id="post-detail">
+      <h1><%= details.title %></h1>
+      <section id="post-meta">
+        <address>
+          <a href="mailto:<%=details.author_email %>"
+            ><%= details.author_name %>
+          </a>
+        </address>
+        <time datetime="<%=details.date %>"
+          ><%= details.humanReadableDate %>
+        </time>
+      </section>
+      <hr />
+      <section>
+        <p id="body"><%= details.body %></p>
+      </section>
+      <hr />
+      <div id="print">
+        <a class="btn" href="">Print</a>
+      </div>
+    </main>
+  </body>
+</html>
